@@ -5,22 +5,28 @@ Easy to use Utility library for Android.
 ![](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)
 
 ## Usage
-* Gradle
 
-Add the following to your `build.gradle` file
+### Gradle
+- Add the following to your Project's `build.gradle`
+
 ```
 repositories {
 	    maven {
 	        url "https://jitpack.io"
 	    }
 	}
+```
 
+- Add the following to your Module's `build.gradle`
+
+```
 dependencies {
 	        compile 'com.github.chipset95:Potato-Library:0.1.1'
 	}
 ```
 
-* Maven
+### Maven
+
 ```
 <repository>
     <id>jitpack.io</id>

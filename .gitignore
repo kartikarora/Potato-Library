@@ -18,7 +18,7 @@ Thumbs.db
 
 # Java class files
 *.class
-
+demo
 # generated files
 bin/
 gen/

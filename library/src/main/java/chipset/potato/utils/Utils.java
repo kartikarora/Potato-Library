@@ -28,7 +28,7 @@ public class Utils {
     /**
      * Method to get internet connection status
      *
-     * @param Context Context of the current activity
+     * @param context Context of the current activity
      * @return true     if {@link java.lang.Boolean} internet connection is established else false
      */
     public boolean isInternetConnected(Context context) {
@@ -44,8 +44,8 @@ public class Utils {
     /**
      * Method to hide keyboard
      *
-     * @param Context Context of the current activity
-     * @param View    View of the activity to get Window Token
+     * @param context Context of the current activity
+     * @param view    View of the activity to get Window Token
      */
 
     public void hideKeyboard(Context context, View view) {
@@ -57,7 +57,7 @@ public class Utils {
     /**
      * Method to get Bluetooth status
      *
-     * @param Context Context of the current activity
+     * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if internet bluetooth is enabled else false
      */
     public boolean isBluetoothOn(Context context) {
@@ -72,7 +72,7 @@ public class Utils {
     /**
      * Method to get battery level
      *
-     * @param Context Context of the current activity
+     * @param context Context of the current activity
      * @return {@link java.lang.Integer} with battery level
      */
     public int getBatteryLevel(Context context) {
@@ -90,8 +90,8 @@ public class Utils {
      * Method to open Directory in external storage
      * Directory will be created if it does not already exist
      *
-     * @param String    containing directory name
-     * @param Context   Context of the current activity
+     * @param folderName    containing directory name
+     * @param context   Context of the current activity
      * @return {@link java.io.File} object of opened/created directory
      */
     public File openDirectory(Context context, String folderName) throws IOException {

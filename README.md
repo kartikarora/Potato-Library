@@ -2,6 +2,7 @@
 
 Easy to use Utility library for Android.
 
+![](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)
 ###Usage
 * Gradle
 Add the following to your build.gradle file

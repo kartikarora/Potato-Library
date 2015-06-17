@@ -6,6 +6,7 @@ Easy to use Utility library for Android.
 
 ## Usage
 * Gradle
+
 Add the following to your `build.gradle` file
 ```
 repositories {
@@ -52,3 +53,7 @@ For checking internet connection, the following permissions need to be added to 
 ## Further Development
 
 Plan to add Android Wear support.
+
+## Contribution
+
+Feel free to fork the repo, add new methods, send in pull requests and add new issues. There's no license right now.

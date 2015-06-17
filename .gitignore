@@ -18,7 +18,6 @@ Thumbs.db
 
 # Java class files
 *.class
-demo
 # generated files
 bin/
 gen/
@@ -51,6 +50,7 @@ gradle.properties
 
 #IntelliJ IDEA
 .idea
+/demo
 
 #Maven
 target

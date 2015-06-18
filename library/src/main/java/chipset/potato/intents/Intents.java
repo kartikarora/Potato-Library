@@ -29,7 +29,8 @@ public class Intents {
             }
         }
         String uri = builder.toString();
-        context.startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse(uri)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        context.startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse(uri))
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 
     /**
@@ -42,7 +43,9 @@ public class Intents {
         if (!url.startsWith("https://") && !url.startsWith("http://")) {
             url = "http://" + url;
         }
-        context.startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        context.startActivity(new Intent(Intent.ACTION_VIEW)
+                .setData(Uri.parse(url))
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 
     /**
@@ -52,6 +55,22 @@ public class Intents {
      * @param phoneNumber Contact number of the phone call recipient
      */
     public void callIntent(Context context, String phoneNumber) {
-        context.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel: " + phoneNumber)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        context.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel: " + phoneNumber))
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+    }
+
+    /**
+     * Method to start sms intent with default sms application.
+     *
+     * @param context     Context of the activity from where the intent is called
+     * @param phoneNumber Contact number of the phone call recipient
+     * @param message     Body of the sms to be sent
+     */
+    public void smsIntent(Context context, String phoneNumber, String message) {
+        context.startActivity(new Intent(Intent.ACTION_SENDTO)
+                .setData(Uri.parse("sms:"))
+                .putExtra("sms_body", message)
+                .putExtra("address", phoneNumber)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 }

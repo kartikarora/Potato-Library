@@ -7,7 +7,7 @@ Easy to use Utility library for Android.
 ## Usage
 
 ### Gradle
-- Add the following to your Project's `build.gradle`
+Add the following to your modules's `build.gradle`
 
 ```
 repositories {
@@ -15,13 +15,9 @@ repositories {
 	        url "https://jitpack.io"
 	    }
 	}
-```
 
-- Add the following to your Module's `build.gradle`
-
-```
 dependencies {
-	        compile 'com.github.chipset95:Potato-Library:0.1.1'
+	        compile 'com.github.chipset95:Potato-Library:0.1.2'
 	}
 ```
 
@@ -36,7 +32,7 @@ dependencies {
 <dependency>
     <groupId>com.github.chipset95</groupId>
     <artifactId>Potato-Library</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 </dependency>
 ```
 
@@ -45,7 +41,7 @@ Call the library using `Potato.potate()` and you will get following methods to u
 * Utils() - Utility methods to check Internet connection, Bluetooth connection, get Battery level etc.
 * Notifications() - Create a notification with or without sound
 * Preferences() - Store and Retrieve data to/from `SharedPreferences` easily
-* Intents() - Create Intents for email, call and browser with ease
+* Intents() - Create Intents for email, call,sms and browser with ease
 
 
 ### Permissions

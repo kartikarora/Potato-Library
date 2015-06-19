@@ -3,6 +3,7 @@
 Easy to use Utility library for Android.
 
 ![](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)
+![](https://travis-ci.org/chipset95/Potato-Library.svg)
 
 ## Usage
 

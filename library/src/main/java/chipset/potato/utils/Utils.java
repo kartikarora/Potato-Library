@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.location.LocationManager;
 import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -103,4 +104,15 @@ public class Utils {
         MediaScannerConnection.scanFile(context, new String[]{file.getAbsolutePath()}, null, null);
         return file;
     }
+    /**
+     * Method to get GPS provider status
+     *
+     * @param context Context of the current activity
+     * @return {@link java.lang.Boolean} true if GPS provider is enabled else false
+     */
+    public boolean isGPSenabled(Context context){
+        LocationManager locationManager =  (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
 }

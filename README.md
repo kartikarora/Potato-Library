@@ -52,6 +52,8 @@ For checking internet connection, the following permissions need to be added to 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.INTERNET" />
 ```
+For checking Bluetooth, add:
+<uses-permission android:name="android.permission.BLUETOOTH" />
 ## Further Development
 
 Plan to add Android Wear support.

@@ -42,7 +42,7 @@ public class MethodTest extends AndroidTestCase {
         assertFalse(utils.isBluetoothOn(getContext()));
         assertNotNull(utils.openDirectory(getContext(), "abcd"));
         assertTrue(0 <= utils.getBatteryLevel(getContext()) && utils.getBatteryLevel(getContext()) <= 100);
-        assertTrue(utils.isWiFiEnabled(getContext()));
+        assertFalse(utils.isWiFiEnabled(getContext()));
         assertFalse(utils.isGPSEnabled(getContext()));
 
     }

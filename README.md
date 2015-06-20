@@ -62,6 +62,11 @@ Tthe following permissions need to be added to AndroidManifest.xml file of your 
 ```xml
 <uses-permission android:name="android.permission.BLUETOOTH" />
 ```
+#### For WiFi tools
+```xml
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+```
 
 ## Further Development
 

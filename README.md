@@ -2,29 +2,30 @@
 
 Easy to use Utility library for Android.
 
-![](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)
-![](https://travis-ci.org/chipset95/Potato-Library.svg)
+[![JitPack Status](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)](https://jitpack.io/#chipset95/Potato-Library)
+
+[![Travis CI for Potato Library](https://travis-ci.org/chipset95/Potato-Library.svg)](https://travis-ci.org/chipset95/Potato-Library)
 
 ## Usage
 
 ### Gradle
-Add the following to your modules's `build.gradle`
+Add the following to your module's `build.gradle`
 
-```
+```groovy
 repositories {
-	    maven {
-	        url "https://jitpack.io"
-	    }
+    maven {
+	    url "https://jitpack.io"
 	}
+}
 
 dependencies {
-	        compile 'com.github.chipset95:Potato-Library:0.1.2'
-	}
+    compile 'com.github.chipset95:Potato-Library:0.1.2'
+}
 ```
 
 ### Maven
 
-```
+```xml
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
@@ -39,20 +40,29 @@ dependencies {
 
 Call the library using `Potato.potate()` and you will get following methods to use:
 
-* Utils() - Utility methods to check Internet connection, Bluetooth connection, get Battery level etc.
+* Utils() - Utility methods to check Internet connection, methods on Bluetooth connection, get Battery level etc.
 * Notifications() - Create a notification with or without sound
 * Preferences() - Store and Retrieve data to/from `SharedPreferences` easily
-* Intents() - Create Intents for email, call,sms and browser with ease
+* Intents() - Create Intents for email, call, sms and browser with ease
 
 
 ### Permissions
 
-For checking internet connection, the following permissions need to be added to AndroidManifest.xml file of your project
+Tthe following permissions need to be added to AndroidManifest.xml file of your project
 
-```
+#### For checking internet connection
+
+```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.INTERNET" />
 ```
+
+#### For bluetooth tools
+
+```xml
+<uses-permission android:name="android.permission.BLUETOOTH" />
+```
+
 ## Further Development
 
 Plan to add Android Wear support.

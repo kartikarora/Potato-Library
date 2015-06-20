@@ -99,6 +99,20 @@ public class Utils {
     }
 
     /**
+     * Method to switch Off bluetooth
+     *
+     * @param context Context of the current activity
+     */
+    public void setBluetoothOff(Context context) {
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (isBluetoothAvailable(context)) {
+            if (isBluetoothOn(context)) {
+                mBluetoothAdapter.disable();
+            }
+        }
+    }
+
+    /**
      * Method to get switch on bluetooth and make it discoverable
      *
      * @param context Context of the current activity
@@ -154,52 +168,47 @@ public class Utils {
         MediaScannerConnection.scanFile(context, new String[]{file.getAbsolutePath()}, null, null);
         return file;
     }
+
     /**
      * Method to get GPS status
      *
      * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if GPS provider is enabled else false
      */
-    public boolean isGPSenabled(Context context){
+    public boolean isGPSEnabled(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
+
     /**
      * Method to get WiFi status
      *
      * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if WiFi is enabled else false
      */
-    public boolean isWiFienabled(Context context){
+
+    public boolean isWiFiEnabled(Context context) {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         return wifiManager.isWifiEnabled();
     }
+
     /**
      * Method to switch on WiFi
+     *
      * @param context Context of the current activity
      */
-    public void enableWiFi(Context context){
+    public void setWiFiOn(Context context) {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);
     }
+
     /**
      * Method to switch off WiFi
+     *
      * @param context Context of the current activity
      */
-    public void disableWifi(Context context){
+    public void setWifiOff(Context context) {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
-    }
-    /**
-     * Method to switch Off bluetooth
-     * @param context Context of the current activity
-     */
-    public void setBluetoothOff(Context context){
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (isBluetoothAvailable(context)) {
-            if (isBluetoothOn(context)) {
-                mBluetoothAdapter.disable();
-            }
-        }
     }
 }

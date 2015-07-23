@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Developer: chipset
@@ -235,29 +237,29 @@ public class Utils {
 
     /**
      * Method to check if Mobile Data is enabled
-     * 
+     *
      * @param context Context of the current Activity
      * @return {@link java.lang.Boolean} true if Mobile Data is enabled
-     * 
+     *
      */
     public boolean isMobileDataEnabled(Context context){
-            boolean mobileDataEnabled = false; // Assume disabled
-            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            try {
-                Class cmClass = Class.forName(cm.getClass().getName());
-                Method method = cmClass.getDeclaredMethod("getMobileDataEnabled");
-                method.setAccessible(true); // Make the method callable
-                // get the setting for "mobile data"
-                mobileDataEnabled = (Boolean)method.invoke(cm);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return mobileDataEnabled;
+        boolean mobileDataEnabled = false; // Assume disabled
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        try {
+            Class cmClass = Class.forName(cm.getClass().getName());
+            Method method = cmClass.getDeclaredMethod("getMobileDataEnabled");
+            method.setAccessible(true); // Make the method callable
+            // get the setting for "mobile data"
+            mobileDataEnabled = (Boolean)method.invoke(cm);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mobileDataEnabled;
     }
 
     /**
      * Method to enable Mobile Data
-     * 
+     *
      * @param context Context of the current Activity
      */
     public void enableMobileData(Context context){

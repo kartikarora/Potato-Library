@@ -211,4 +211,14 @@ public class Utils {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
     }
+
+    /**
+     * Method to get root View of an activity
+     *
+     * @param view Any view in an activity
+     * @return {@link android.view.View} Root view of the activity
+     */
+    public View getRootView(View view) {
+        return view.findViewById(android.R.id.content);
+    }
 }

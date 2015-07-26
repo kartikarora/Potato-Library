@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Developer: chipset
@@ -211,6 +213,7 @@ public class Utils {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
     }
+<<<<<<< HEAD
 
     /**
      * Method to get root View of an activity
@@ -222,3 +225,94 @@ public class Utils {
         return view.findViewById(android.R.id.content);
     }
 }
+=======
+    /**
+     * Method to check type of interenet connection
+     *
+     * @param context Context of the current Activity
+     *
+     * @return 0 for not connected, 1 for WiFi, 2 for Mobile Data
+     */
+    public int connectionType(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if (null != activeNetwork) {
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
+                return 1;
+
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
+                return 2;
+        }
+        return 0;
+    }
+
+    /**
+     * Method to check if Mobile Data is enabled
+     *
+     * @param context Context of the current Activity
+     * @return {@link java.lang.Boolean} true if Mobile Data is enabled
+     *
+     */
+    public boolean isMobileDataEnabled(Context context){
+        boolean mobileDataEnabled = false; // Assume disabled
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        try {
+            Class cmClass = Class.forName(cm.getClass().getName());
+            Method method = cmClass.getDeclaredMethod("getMobileDataEnabled");
+            method.setAccessible(true); // Make the method callable
+            // get the setting for "mobile data"
+            mobileDataEnabled = (Boolean)method.invoke(cm);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mobileDataEnabled;
+    }
+
+    /**
+     * Method to enable Mobile Data
+     *
+     * @param context Context of the current Activity
+     */
+    public void enableMobileData(Context context){
+        try {
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            Method dataMtd = ConnectivityManager.class.getDeclaredMethod("setMobileDataEnabled", boolean.class);
+            dataMtd.setAccessible(true);
+            dataMtd.invoke(cm, true);
+        }
+        catch (NoSuchMethodException e){
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e){
+            e.printStackTrace();
+        }
+        catch (InvocationTargetException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     *  Method to disable Mobile Data
+     * @param context Context of the current Activity
+     */
+    public void disableMobileData(Context context){
+        try {
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            Method dataMtd = ConnectivityManager.class.getDeclaredMethod("setMobileDataEnabled", boolean.class);
+            dataMtd.setAccessible(true);
+            dataMtd.invoke(cm, false);
+        }
+        catch (NoSuchMethodException e){
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e){
+            e.printStackTrace();
+        }
+        catch (InvocationTargetException e){
+            e.printStackTrace();
+        }
+    }
+}
+>>>>>>> 1c47e1cdccfbfe0e07f5713807f09eaaf78f715c

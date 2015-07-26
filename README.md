@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.chipset95:Potato-Library:0.1.3'
+    compile 'com.github.chipset95:Potato-Library:0.1.4'
 }
 ```
 
@@ -34,7 +34,7 @@ dependencies {
 <dependency>
     <groupId>com.github.chipset95</groupId>
     <artifactId>Potato-Library</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
 </dependency>
 ```
 
@@ -77,4 +77,6 @@ Plan to add Android Wear support.
 
 Feel free to fork the repo, add new methods, send in pull requests and add new issues. There's no license right now.
 
-Thanks to [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth disable method.
+Thanks to
+- [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth disable method.
+- [Anuraag Baishya](https://github.com/anuraag-baishya) for adding Mobile Data tools.

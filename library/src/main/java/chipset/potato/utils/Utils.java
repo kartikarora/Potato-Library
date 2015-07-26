@@ -213,7 +213,6 @@ public class Utils {
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
     }
-<<<<<<< HEAD
 
     /**
      * Method to get root View of an activity
@@ -224,10 +223,9 @@ public class Utils {
     public View getRootView(View view) {
         return view.findViewById(android.R.id.content);
     }
-}
-=======
+
     /**
-     * Method to check type of interenet connection
+     * Method to check type of internet connection
      *
      * @param context Context of the current Activity
      *
@@ -315,4 +313,3 @@ public class Utils {
         }
     }
 }
->>>>>>> 1c47e1cdccfbfe0e07f5713807f09eaaf78f715c

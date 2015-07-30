@@ -3,9 +3,7 @@
 Easy to use Utility library for Android.
 
 [![JitPack Status](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)](https://jitpack.io/#chipset95/Potato-Library)
-
 [![Travis-CI Build Status](https://travis-ci.org/chipset95/Potato-Library.svg?branch=master)](https://travis-ci.org/chipset95/Potato-Library)
-
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat)](http://android-arsenal.com/details/1/2205)
 
 ## Usage

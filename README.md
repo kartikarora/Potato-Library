@@ -40,10 +40,10 @@ dependencies {
 
 Call the library using `Potato.potate()` and you will get following methods to use:
 
-* Utils() - Utility methods to check Internet connection, methods on Bluetooth connection, methods for WiFi, get Battery level etc.
+* Utils() - Utility methods to check Internet connection, methods on Bluetooth connection, methods for WiFi, get Battery level, Mobile Data tools etc.
 * Notifications() - Create a notification with or without sound
 * Preferences() - Store and Retrieve data to/from `SharedPreferences` easily
-* Intents() - Create Intents for email, call, sms and browser with ease
+* Intents() - Create Intents for email, call, sms, browser, calendar, music player, camera with ease
 
 
 ### Permissions

@@ -26,16 +26,16 @@
 
 .pl-e  /* entity */,
 .pl-en /* entity.name */ {
-  color: #795da3;
+  color: #2ecc71;
 }
 
 .pl-s .pl-s1 /* string source */,
 .pl-smi      /* storage.modifier.import, storage.modifier.package, storage.type.java, variable.other, variable.parameter.function */ {
-  color: #333;
+  color: #3498db;
 }
 
 .pl-ent /* entity.name.tag */ {
-  color: #63a35c;
+  color: #f1c40f;
 }
 
 .pl-k /* keyword, storage, storage.type */ {
@@ -49,7 +49,7 @@
 .pl-sr .pl-cce       /* string.regexp constant.character.escape */,
 .pl-sr .pl-sra       /* string.regexp string.regexp.arbitrary-repitition */,
 .pl-sr .pl-sre       /* string.regexp source.ruby.embedded */ {
-  color: #183691;
+  color: #3498db;
 }
 
 .pl-v /* variable */ {

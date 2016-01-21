@@ -2,37 +2,39 @@
 
 Easy to use Utility library for Android.
 
-[![JitPack Status](https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack)](https://jitpack.io/#chipset95/Potato-Library)
-[![Travis-CI Build Status](https://travis-ci.org/chipset95/Potato-Library.svg?branch=master)](https://travis-ci.org/chipset95/Potato-Library)
+[![JitPack Status](https://jitpack.io/v/kartikarora/Potato-Library.svg)](https://jitpack.io/#kartikarora/Potato-Library)
+[![Travis-CI Build Status](https://travis-ci.org/kartikarora/Potato-Library.svg?branch=master)](https://travis-ci.org/kartikarora/Potato-Library)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat)](http://android-arsenal.com/details/1/2205)
 
 ## Usage
 
 ### Gradle
-Add the following to your module's `build.gradle`
+Add the following to your root `build.gradle`
 
 ```groovy
-repositories {
-    maven {
-	    url "https://jitpack.io"
-	}
-}
+allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
 
 dependencies {
-    compile 'com.github.chipset95:Potato-Library:0.1.4'
+    compile 'com.github.kartikarora:Potato-Library:0.1.4'
 }
 ```
 
 ### Maven
 
 ```xml
-<repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-</repository>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 
 <dependency>
-    <groupId>com.github.chipset95</groupId>
+    <groupId>com.github.kartikarora</groupId>
     <artifactId>Potato-Library</artifactId>
     <version>0.1.4</version>
 </dependency>

@@ -1,66 +1,54 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Potato Library | Easy to use Utility library for Android</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <link rel="stylesheet" href="stylesheets/rrssb.css">
-
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>Potato Library by kartikarora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Potato Library</h1>
-        <p class="header">Easy to use Utility library for Android</p>
+    <section class="page-header">
+      <h1 class="project-name">Potato Library</h1>
+      <h2 class="project-tagline">Easy to use Utility library for Android</h2>
+      <a href="https://github.com/kartikarora/Potato-Library" class="btn">View on GitHub</a>
+      <a href="https://github.com/kartikarora/Potato-Library/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/kartikarora/Potato-Library/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <ul class="rrssb-buttons clearfix">
-            <li class="rrssb-github"><a href="https://github.com/chipset95/Potato-Library"><span class="rrssb-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
-                    <path d="M13.97 1.57c-7.03 0-12.733 5.703-12.733 12.74 0 5.622 3.636 10.393 8.717 12.084.637.13.87-.277.87-.615 0-.302-.013-1.103-.02-2.165-3.54.77-4.29-1.707-4.29-1.707-.578-1.473-1.413-1.863-1.413-1.863-1.154-.79.09-.775.09-.775 1.276.104 1.96 1.316 1.96 1.312 1.135 1.936 2.99 1.393 3.712 1.06.116-.823.445-1.384.81-1.704-2.83-.32-5.802-1.414-5.802-6.293 0-1.39.496-2.527 1.312-3.418-.132-.322-.57-1.617.123-3.37 0 0 1.07-.343 3.508 1.305 1.016-.282 2.105-.424 3.188-.43 1.082 0 2.167.156 3.198.44 2.43-1.65 3.498-1.307 3.498-1.307.695 1.754.258 3.043.13 3.37.815.903 1.314 2.038 1.314 3.43 0 4.893-2.978 5.97-5.814 6.286.458.388.876 1.16.876 2.358 0 1.703-.016 3.076-.016 3.482 0 .334.232.748.877.61 5.056-1.687 8.7-6.456 8.7-12.08-.055-7.058-5.75-12.757-12.792-12.75z"></path>
-              </svg></span><span class="rrssb-text">&nbsp;View on GitHub</span></a>
-            </li>
-        </ul>
-        <p>&nbsp;</p>
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/chipset95">chipset95</a></p>
-
-
-      </header>
-      <section>
-        <h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+    <section class="main-content">
+      <h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <h3>
-<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gradle</h3>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle</h3>
 
-<p>Add the following to your module's <code>build.gradle</code></p>
+<p>Add the following to your root <code>build.gradle</code></p>
 
-<div class="highlight highlight-source-groovy"><pre>repositories {
-    maven {
-        url <span class="pl-s"><span class="pl-pds">"</span>https://jitpack.io<span class="pl-pds">"</span></span>
+<div class="highlight highlight-source-groovy"><pre>allprojects {
+        repositories {
+            maven { url <span class="pl-s"><span class="pl-pds">"</span>https://jitpack.io<span class="pl-pds">"</span></span> }
+        }
     }
-}
 
 dependencies {
-    compile <span class="pl-s"><span class="pl-pds">'</span>com.github.chipset95:Potato-Library:0.1.4<span class="pl-pds">'</span></span>
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.github.kartikarora:Potato-Library:0.1.4<span class="pl-pds">'</span></span>
 }</pre></div>
 
 <h3>
-<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maven</h3>
+<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maven</h3>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">repository</span>&gt;
-    &lt;<span class="pl-ent">id</span>&gt;jitpack.io&lt;/<span class="pl-ent">id</span>&gt;
-    &lt;<span class="pl-ent">url</span>&gt;https://jitpack.io&lt;/<span class="pl-ent">url</span>&gt;
-&lt;/<span class="pl-ent">repository</span>&gt;
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">repositories</span>&gt;
+    &lt;<span class="pl-ent">repository</span>&gt;
+        &lt;<span class="pl-ent">id</span>&gt;jitpack.io&lt;/<span class="pl-ent">id</span>&gt;
+        &lt;<span class="pl-ent">url</span>&gt;https://jitpack.io&lt;/<span class="pl-ent">url</span>&gt;
+    &lt;/<span class="pl-ent">repository</span>&gt;
+&lt;/<span class="pl-ent">repositories</span>&gt;
 
 &lt;<span class="pl-ent">dependency</span>&gt;
-    &lt;<span class="pl-ent">groupId</span>&gt;com.github.chipset95&lt;/<span class="pl-ent">groupId</span>&gt;
+    &lt;<span class="pl-ent">groupId</span>&gt;com.github.kartikarora&lt;/<span class="pl-ent">groupId</span>&gt;
     &lt;<span class="pl-ent">artifactId</span>&gt;Potato-Library&lt;/<span class="pl-ent">artifactId</span>&gt;
     &lt;<span class="pl-ent">version</span>&gt;0.1.4&lt;/<span class="pl-ent">version</span>&gt;
 &lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
@@ -75,34 +63,29 @@ dependencies {
 </ul>
 
 <h3>
-<a id="permissions" class="anchor" href="#permissions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Permissions</h3>
+<a id="permissions" class="anchor" href="#permissions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Permissions</h3>
 
 <p>The following permissions need to be added to AndroidManifest.xml file of your project</p>
 
 <h4>
-<a id="for-checking-internet-connection" class="anchor" href="#for-checking-internet-connection" aria-hidden="true"><span class="octicon octicon-link"></span></a>For checking internet connection</h4>
+<a id="for-checking-internet-connection" class="anchor" href="#for-checking-internet-connection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For checking internet connection</h4>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_NETWORK_STATE<span class="pl-pds">"</span></span> /&gt;
 &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.INTERNET<span class="pl-pds">"</span></span> /&gt;</pre></div>
 
 <h4>
-<a id="for-bluetooth-tools" class="anchor" href="#for-bluetooth-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>For bluetooth tools</h4>
+<a id="for-bluetooth-tools" class="anchor" href="#for-bluetooth-tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For bluetooth tools</h4>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.BLUETOOTH<span class="pl-pds">"</span></span> /&gt;</pre></div>
 
 <h4>
-<a id="for-wifi-tools" class="anchor" href="#for-wifi-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>For WiFi tools</h4>
+<a id="for-wifi-tools" class="anchor" href="#for-wifi-tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For WiFi tools</h4>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_WIFI_STATE<span class="pl-pds">"</span></span> /&gt;
 &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.CHANGE_WIFI_STATE<span class="pl-pds">"</span></span> /&gt;</pre></div>
 
 <h2>
-<a id="further-development" class="anchor" href="#further-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Development</h2>
-
-<p>Plan to add Android Wear support.</p>
-
-<h2>
-<a id="contribution" class="anchor" href="#contribution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribution</h2>
+<a id="contribution" class="anchor" href="#contribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution</h2>
 
 <p>Feel free to fork the repo, add new methods, send in pull requests and add new issues. There's no license right now.</p>
 
@@ -115,17 +98,19 @@ dependencies {
 <a href="https://github.com/anuraag-baishya">Anuraag Baishya</a> for adding Mobile Data tools.</li>
 </ul>
 
-<p><a href="https://jitpack.io/#chipset95/Potato-Library"><img src="https://img.shields.io/github/release/chipset95/Potato-Library.svg?label=JitPack" alt="JitPack Status"></a>
-<a href="https://travis-ci.org/chipset95/Potato-Library"><img src="https://travis-ci.org/chipset95/Potato-Library.svg?branch=master" alt="Travis-CI Build Status"></a>
+<p><a href="https://jitpack.io/#kartikarora/Potato-Library"><img src="https://jitpack.io/v/kartikarora/Potato-Library.svg" alt="JitPack Status"></a>
+<a href="https://travis-ci.org/kartikarora/Potato-Library"><img src="https://travis-ci.org/kartikarora/Potato-Library.svg?branch=master" alt="Travis-CI Build Status"></a>
 <a href="http://android-arsenal.com/details/1/2205"><img src="https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat" alt="Android Arsenal"></a></p>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-        <p><a href="http://madewithlove.org.in" target="_blank">Made with <span style="color: #e74c3c">&hearts;</span> in India</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kartikarora/Potato-Library">Potato Library</a> is maintained by <a href="https://github.com/kartikarora">kartikarora</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>

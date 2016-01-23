@@ -30,10 +30,13 @@
         repositories {
             maven { url <span class="pl-s"><span class="pl-pds">"</span>https://jitpack.io<span class="pl-pds">"</span></span> }
         }
-    }
+    }</pre></div>
 
+
+<p>To the module's <code>build.gradle</code> file, add</p>
+<div class="highlight highlight-source-groovy"><pre>
 dependencies {
-    compile <span class="pl-s"><span class="pl-pds">'</span>com.github.kartikarora:Potato-Library:0.1.4<span class="pl-pds">'</span></span>
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.github.kartikarora:Potato-Library:0.1.5<span class="pl-pds">'</span></span>
 }</pre></div>
 
 <h3>
@@ -49,10 +52,10 @@ dependencies {
 &lt;<span class="pl-ent">dependency</span>&gt;
     &lt;<span class="pl-ent">groupId</span>&gt;com.github.kartikarora&lt;/<span class="pl-ent">groupId</span>&gt;
     &lt;<span class="pl-ent">artifactId</span>&gt;Potato-Library&lt;/<span class="pl-ent">artifactId</span>&gt;
-    &lt;<span class="pl-ent">version</span>&gt;0.1.4&lt;/<span class="pl-ent">version</span>&gt;
+    &lt;<span class="pl-ent">version</span>&gt;0.1.5&lt;/<span class="pl-ent">version</span>&gt;
 &lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
 
-<p>Call the library using <code>Potato.potate()</code> and you will get following methods to use:</p>
+<p>Call the library using <code>Potato.potate(context)</code> and you will get following methods to use:</p>
 
 <ul>
 <li>Utils() - Utility methods to check Internet connection, methods on Bluetooth connection, methods for WiFi, get Battery level etc.</li>
@@ -75,13 +78,16 @@ dependencies {
 <h4>
 <a id="for-bluetooth-tools" class="anchor" href="#for-bluetooth-tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For bluetooth tools</h4>
 
-<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.BLUETOOTH<span class="pl-pds">"</span></span> /&gt;</pre></div>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.BLUETOOTH<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.BLUETOOTH_ADMIN<span class="pl-pds">"</span></span> /&gt;</pre></div>
 
 <h4>
 <a id="for-wifi-tools" class="anchor" href="#for-wifi-tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>For WiFi tools</h4>
 
 <div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_WIFI_STATE<span class="pl-pds">"</span></span> /&gt;
 &lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.CHANGE_WIFI_STATE<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p>Please make sure to request appropriate <a href="http://developer.android.com/training/permissions/requesting.html">runtime permisions</a> on Android Marshmallow (SDK 23) and above</p>
 
 <h2>
 <a id="contribution" class="anchor" href="#contribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution</h2>

@@ -18,7 +18,7 @@ public class ClassTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        potato = Potato.potate();
+        potato = Potato.potate(getContext());
     }
 
     public void testForPotatoInit() {

@@ -30,16 +30,20 @@ import java.lang.reflect.Method;
  */
 public class Utils {
 
+    private Context mContext;
+
+    public Utils(Context mContext) {
+        this.mContext = mContext;
+    }
+
     /**
      * Method to get internet connection status
      *
-     * @param context Context of the current activity
-     * @return true     if {@link java.lang.Boolean} internet connection is established else false
+     * @return true     if {@link Boolean} internet connection is established else false
      */
-    public boolean isInternetConnected(Context context) {
+    public boolean isInternetConnected() {
         boolean isConnected;
-        ConnectivityManager cm = (ConnectivityManager) context
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         isConnected = (activeNetwork != null)
                 && (activeNetwork.isConnectedOrConnecting());
@@ -49,26 +53,23 @@ public class Utils {
     /**
      * Method to hide keyboard
      *
-     * @param context Context of the current activity
-     * @param view    View of the activity to get Window Token
+     * @param view View of the activity to get Window Token
      */
 
-    public void hideKeyboard(Context context, View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) context
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     /**
      * Method to get Bluetooth status
      *
-     * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if internet bluetooth available
      */
-    public boolean isBluetoothAvailable(Context context) {
+    public boolean isBluetoothAvailable() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
-            Toast.makeText(context, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
             return false;
         } else return true;
     }
@@ -76,13 +77,12 @@ public class Utils {
     /**
      * Method to get Bluetooth status
      *
-     * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if internet bluetooth is enabled else false
      */
-    public boolean isBluetoothOn(Context context) {
+    public boolean isBluetoothOn() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
-            Toast.makeText(context, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
             return false;
         }
         return mBluetoothAdapter.isEnabled();
@@ -91,10 +91,10 @@ public class Utils {
     /**
      * Method to switch on bluetooth
      */
-    public void setBluetoothOn(Context context) {
+    public void setBluetoothOn() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (isBluetoothAvailable(context)) {
-            if (!isBluetoothOn(context)) {
+        if (isBluetoothAvailable()) {
+            if (!isBluetoothOn()) {
                 mBluetoothAdapter.enable();
             }
         }
@@ -102,13 +102,11 @@ public class Utils {
 
     /**
      * Method to switch Off bluetooth
-     *
-     * @param context Context of the current activity
      */
-    public void setBluetoothOff(Context context) {
+    public void setBluetoothOff() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (isBluetoothAvailable(context)) {
-            if (isBluetoothOn(context)) {
+        if (isBluetoothAvailable()) {
+            if (isBluetoothOn()) {
                 mBluetoothAdapter.disable();
             }
         }
@@ -117,21 +115,20 @@ public class Utils {
     /**
      * Method to get switch on bluetooth and make it discoverable
      *
-     * @param context Context of the current activity
      * @param seconds Time in seconds for discoverable
      */
-    public void setBluetoothOnAndDiscoverable(Context context, int seconds) {
+    public void setBluetoothOnAndDiscoverable(int seconds) {
         if (seconds > 3600 && seconds < 1) {
             Log.i("Potato.Utils.Bluetooth", "Seconds set to 120");
         }
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (isBluetoothAvailable(context)) {
-            setBluetoothOn(context);
+        if (isBluetoothAvailable()) {
+            setBluetoothOn();
             if (mBluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
                 Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE)
                         .putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, seconds)
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(discoverableIntent);
+                mContext.startActivity(discoverableIntent);
             }
         }
     }
@@ -139,14 +136,13 @@ public class Utils {
     /**
      * Method to get battery level
      *
-     * @param context Context of the current activity
      * @return {@link java.lang.Integer} with battery level
      */
-    public int getBatteryLevel(Context context) {
+    public int getBatteryLevel() {
         final int[] level = new int[1];
-        context.registerReceiver(new BroadcastReceiver() {
+        mContext.registerReceiver(new BroadcastReceiver() {
             @Override
-            public void onReceive(Context context, Intent intent) {
+            public void onReceive(Context mContext, Intent intent) {
                 level[0] = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
             }
         }, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
@@ -158,59 +154,54 @@ public class Utils {
      * Directory will be created if it does not already exist
      *
      * @param folderName containing directory name
-     * @param context    Context of the current activity
      * @return {@link java.io.File} object of opened/created directory
      */
-    public File openDirectory(Context context, String folderName) throws IOException {
+    public File openDirectory(String folderName) throws IOException {
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()
                 + "/" + folderName);
         if (!file.exists()) {
             file.mkdirs();
         }
-        MediaScannerConnection.scanFile(context, new String[]{file.getAbsolutePath()}, null, null);
+        MediaScannerConnection.scanFile(mContext, new String[]{file.getAbsolutePath()}, null, null);
         return file;
     }
 
     /**
      * Method to get GPS status
      *
-     * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if GPS provider is enabled else false
      */
-    public boolean isGPSEnabled(Context context) {
-        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+    public boolean isGPSEnabled(Context mContext) {
+        LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
     /**
      * Method to get WiFi status
      *
-     * @param context Context of the current activity
      * @return {@link java.lang.Boolean} true if WiFi is enabled else false
      */
 
-    public boolean isWiFiEnabled(Context context) {
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+    public boolean isWiFiEnabled() {
+        WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         return wifiManager.isWifiEnabled();
     }
 
     /**
      * Method to switch on WiFi
      *
-     * @param context Context of the current activity
+     * @param mContext Context of the current activity
      */
-    public void setWiFiOn(Context context) {
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+    public void setWiFiOn(Context mContext) {
+        WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);
     }
 
     /**
      * Method to switch off WiFi
-     *
-     * @param context Context of the current activity
      */
-    public void setWifiOff(Context context) {
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+    public void setWifiOff() {
+        WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
     }
 
@@ -227,20 +218,18 @@ public class Utils {
     /**
      * Method to check type of internet connection
      *
-     * @param context Context of the current Activity
-     *
      * @return 0 for not connected, 1 for WiFi, 2 for Mobile Data
      */
-    public int connectionType(Context context){
-        ConnectivityManager cm = (ConnectivityManager) context
+    public int connectionType() {
+        ConnectivityManager cm = (ConnectivityManager) mContext
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         if (null != activeNetwork) {
-            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
                 return 1;
 
-            if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
                 return 2;
         }
         return 0;
@@ -249,19 +238,17 @@ public class Utils {
     /**
      * Method to check if Mobile Data is enabled
      *
-     * @param context Context of the current Activity
      * @return {@link java.lang.Boolean} true if Mobile Data is enabled
-     *
      */
-    public boolean isMobileDataEnabled(Context context){
+    public boolean isMobileDataEnabled() {
         boolean mobileDataEnabled = false; // Assume disabled
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
         try {
             Class cmClass = Class.forName(cm.getClass().getName());
             Method method = cmClass.getDeclaredMethod("getMobileDataEnabled");
             method.setAccessible(true); // Make the method callable
             // get the setting for "mobile data"
-            mobileDataEnabled = (Boolean)method.invoke(cm);
+            mobileDataEnabled = (Boolean) method.invoke(cm);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -270,45 +257,36 @@ public class Utils {
 
     /**
      * Method to enable Mobile Data
-     *
-     * @param context Context of the current Activity
      */
-    public void enableMobileData(Context context){
+    public void enableMobileData() {
         try {
-            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
             Method dataMtd = ConnectivityManager.class.getDeclaredMethod("setMobileDataEnabled", boolean.class);
             dataMtd.setAccessible(true);
             dataMtd.invoke(cm, true);
-        }
-        catch (NoSuchMethodException e){
+        } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }
-        catch (IllegalAccessException e){
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
-        }
-        catch (InvocationTargetException e){
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     *  Method to disable Mobile Data
-     * @param context Context of the current Activity
+     * Method to disable Mobile Data
      */
-    public void disableMobileData(Context context){
+    public void disableMobileData() {
         try {
-            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
             Method dataMtd = ConnectivityManager.class.getDeclaredMethod("setMobileDataEnabled", boolean.class);
             dataMtd.setAccessible(true);
             dataMtd.invoke(cm, false);
-        }
-        catch (NoSuchMethodException e){
+        } catch (NoSuchMethodException e) {
             e.printStackTrace();
-        }
-        catch (IllegalAccessException e){
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
-        }
-        catch (InvocationTargetException e){
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
     }

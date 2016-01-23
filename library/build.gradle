@@ -6,8 +6,8 @@ android {
 
     def versionMajor = 0
     def versionMinor = 1
-    def versionPatch = 3
-    def versionBuild = 201115
+    def versionPatch = 5
+    def versionBuild = 230116
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
     defaultConfig {
@@ -24,6 +24,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:support-v4:22.2.1'
     testCompile 'junit:junit:4.12'
 }

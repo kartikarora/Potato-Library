@@ -1,13 +1,13 @@
 package chipset.potato.notifications;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 
 /**
  * Developer: chipset
@@ -17,6 +17,12 @@ import android.support.v4.app.NotificationCompat;
  */
 public class Notifications {
 
+    private Context mContext;
+
+    public Notifications(Context mContext) {
+        this.mContext = mContext;
+    }
+
     /**
      * Method to show notification(no actions, default tune)
      *
@@ -24,21 +30,20 @@ public class Notifications {
      * @param subtitle     String for the notification subtitle
      * @param icon         Image for the notification icon
      * @param resultIntent Intent to start when notification is tapped
-     * @param context      Context of the class which is deploying the notification
      */
     public void showNotificationDefaultSound(String title, String subtitle, int icon,
-                                             Intent resultIntent, Context context) {
+                                             Intent resultIntent) {
 
         Uri soundUri = RingtoneManager
                 .getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        PendingIntent pendingResultIntent = PendingIntent.getActivity(context,
+        PendingIntent pendingResultIntent = PendingIntent.getActivity(mContext,
                 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        Notification mBuilder = new NotificationCompat.Builder(context)
+        Notification mBuilder = new NotificationCompat.Builder(mContext)
                 .setContentTitle(title).setContentText(subtitle)
                 .setSmallIcon(icon).setContentIntent(pendingResultIntent)
-                .setSound(soundUri).setAutoCancel(true).build();
-        NotificationManager mNotifyMgr = (NotificationManager) context
-                .getSystemService(Context.NOTIFICATION_SERVICE);
+                .setSound(soundUri).setAutoCancel(true)
+                .build();
+        NotificationManagerCompat mNotifyMgr = NotificationManagerCompat.from(mContext);
         mNotifyMgr.cancelAll();
         mNotifyMgr.notify(0, mBuilder);
     }
@@ -50,19 +55,17 @@ public class Notifications {
      * @param subtitle     String for the notification subtitle
      * @param icon         Image for the notification icon
      * @param resultIntent Intent to start when notification is tapped
-     * @param context      Context of the class which is deploying the notification
      */
     public void showNotificationNoSound(String title, String subtitle,
-                                        int icon, Intent resultIntent, Context context) {
+                                        int icon, Intent resultIntent) {
 
-        PendingIntent pendingResultIntent = PendingIntent.getActivity(context,
+        PendingIntent pendingResultIntent = PendingIntent.getActivity(mContext,
                 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        Notification mBuilder = new NotificationCompat.Builder(context)
+        Notification mBuilder = new NotificationCompat.Builder(mContext)
                 .setContentTitle(title).setContentText(subtitle)
                 .setSmallIcon(icon).setContentIntent(pendingResultIntent)
                 .setAutoCancel(true).build();
-        NotificationManager mNotifyMgr = (NotificationManager) context
-                .getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManagerCompat mNotifyMgr = NotificationManagerCompat.from(mContext);
         mNotifyMgr.cancelAll();
         mNotifyMgr.notify(0, mBuilder);
     }

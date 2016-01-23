@@ -11,13 +11,21 @@ import android.content.SharedPreferences;
  */
 public class Preferences {
 
+    private Context mContext;
+
+    public Preferences(Context mContext) {
+        this.mContext = mContext;
+    }
+
     /**
      * Methods to SharedPreferences data
-	 */
+     * @param preferenceName Name of the preference
+     * @param val Value to be stored in the preference
+     */
     //Boolean
-    public void putSharedPreference(Context context, String preferenceName,
+    public void putSharedPreference(String preferenceName,
                                     boolean val) {
-        SharedPreferences pref = context
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
         SharedPreferences.Editor editor = pref.edit();
@@ -27,9 +35,9 @@ public class Preferences {
     }
 
     // String
-    public void putSharedPreference(Context context, String preferenceName,
+    public void putSharedPreference(String preferenceName,
                                     String val) {
-        SharedPreferences pref = context
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
         SharedPreferences.Editor editor = pref.edit();
@@ -39,9 +47,9 @@ public class Preferences {
     }
 
     // Integer
-    public void putSharedPreference(Context context, String preferenceName,
+    public void putSharedPreference(String preferenceName,
                                     int val) {
-        SharedPreferences pref = context
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
         SharedPreferences.Editor editor = pref.edit();
@@ -51,9 +59,9 @@ public class Preferences {
     }
 
     // Long
-    public void putSharedPreference(Context context, String preferenceName,
+    public void putSharedPreference(String preferenceName,
                                     long val) {
-        SharedPreferences pref = context
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
         SharedPreferences.Editor editor = pref.edit();
@@ -63,9 +71,9 @@ public class Preferences {
     }
 
     // Float
-    public void putSharedPreference(Context context, String preferenceName,
+    public void putSharedPreference(String preferenceName,
                                     float val) {
-        SharedPreferences pref = context
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
         SharedPreferences.Editor editor = pref.edit();
@@ -76,10 +84,11 @@ public class Preferences {
 
     /**
      * Method to get SharedPreferences data
-	 */
+     * @param preferenceName Name of the preference
+     */
     // Boolean
-    public boolean getSharedPreferenceBoolean(Context context, String preferenceName) {
-        SharedPreferences pref = context
+    public boolean getSharedPreferenceBoolean(String preferenceName) {
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
 
@@ -88,8 +97,8 @@ public class Preferences {
     }
 
     // Integer
-    public int getSharedPreferenceInteger(Context context, String preferenceName) {
-        SharedPreferences pref = context
+    public int getSharedPreferenceInteger(String preferenceName) {
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
 
@@ -98,8 +107,8 @@ public class Preferences {
     }
 
     // String
-    public String getSharedPreferenceString(Context context, String preferenceName) {
-        SharedPreferences pref = context
+    public String getSharedPreferenceString(String preferenceName) {
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
 
@@ -108,8 +117,8 @@ public class Preferences {
     }
 
     // Long
-    public long getSharedPreferenceLong(Context context, String preferenceName) {
-        SharedPreferences pref = context
+    public long getSharedPreferenceLong(String preferenceName) {
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
 
@@ -118,8 +127,8 @@ public class Preferences {
     }
 
     // Float
-    public float getSharedPreferenceFloat(Context context, String preferenceName) {
-        SharedPreferences pref = context
+    public float getSharedPreferenceFloat(String preferenceName) {
+        SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
 

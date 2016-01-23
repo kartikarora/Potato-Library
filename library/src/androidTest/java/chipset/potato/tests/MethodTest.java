@@ -18,7 +18,6 @@ import chipset.potato.utils.Utils;
  */
 
 public class MethodTest extends AndroidTestCase {
-    private Potato potato;
     private Utils utils;
     private Notifications notifications;
     private Preferences preferences;
@@ -27,7 +26,7 @@ public class MethodTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        potato = Potato.potate();
+        Potato potato = Potato.potate(getContext());
         assertNotNull(potato);
         utils = potato.Utils();
         notifications = potato.Notifications();
@@ -37,11 +36,11 @@ public class MethodTest extends AndroidTestCase {
 
     public void testForUtilMethods() throws IOException {
         assertNotNull(utils);
-        assertTrue(utils.isInternetConnected(getContext()));
-        assertFalse(utils.isBluetoothAvailable(getContext()));
-        assertFalse(utils.isBluetoothOn(getContext()));
-        assertNotNull(utils.openDirectory(getContext(), "abcd"));
-        assertTrue(0 <= utils.getBatteryLevel(getContext()) && utils.getBatteryLevel(getContext()) <= 100);
+        assertTrue(utils.isInternetConnected());
+        assertFalse(utils.isBluetoothAvailable());
+        assertFalse(utils.isBluetoothOn());
+        assertNotNull(utils.openDirectory("abcd"));
+        assertTrue(0 <= utils.getBatteryLevel() && utils.getBatteryLevel() <= 100);
 
     }
 
@@ -51,17 +50,17 @@ public class MethodTest extends AndroidTestCase {
 
     public void testForPreferencesMethods() {
         assertNotNull(preferences);
-        preferences.putSharedPreference(getContext(), "String", "test");
-        preferences.putSharedPreference(getContext(), "int", 0);
-        preferences.putSharedPreference(getContext(), "boolean", false);
-        preferences.putSharedPreference(getContext(), "long", (long) 0);
-        preferences.putSharedPreference(getContext(), "float", 0.0f);
+        preferences.putSharedPreference("String", "test");
+        preferences.putSharedPreference("int", 0);
+        preferences.putSharedPreference("boolean", false);
+        preferences.putSharedPreference("long", (long) 0);
+        preferences.putSharedPreference("float", 0.0f);
 
-        assertEquals("test", preferences.getSharedPreferenceString(getContext(), "String"));
-        assertEquals(0, preferences.getSharedPreferenceInteger(getContext(), "int"));
-        assertFalse(preferences.getSharedPreferenceBoolean(getContext(), "boolean"));
-        assertEquals((long) 0, preferences.getSharedPreferenceLong(getContext(), "long"));
-        assertEquals(0.0f, preferences.getSharedPreferenceFloat(getContext(), "float"));
+        assertEquals("test", preferences.getSharedPreferenceString("String"));
+        assertEquals(0, preferences.getSharedPreferenceInteger("int"));
+        assertFalse(preferences.getSharedPreferenceBoolean("boolean"));
+        assertEquals((long) 0, preferences.getSharedPreferenceLong("long"));
+        assertEquals(0.0f, preferences.getSharedPreferenceFloat("float"));
     }
 
     public void testForIntentsMethods() {

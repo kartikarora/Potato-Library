@@ -22,21 +22,21 @@
  SOFTWARE.
  */
 
-package chipset.potato.tests;
+package chipset.potato.sensors;
 
-import android.app.Application;
-import android.test.ApplicationTestCase;
+import android.content.Context;
 
 /**
  * Developer: chipset
- * Package : chipset.potato
+ * Package : chipset.potato.sensors
  * Project : Potato-Library
- * Date : 20/6/15
+ * Date : 30/3/16
  */
+public class Sensors {
 
-public class ApplicationTest extends ApplicationTestCase<Application> {
+    private Context mContext;
 
-    public ApplicationTest() {
-        super(Application.class);
+    public Sensors(Context mContext) {
+        this.mContext = mContext;
     }
 }

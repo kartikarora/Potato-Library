@@ -56,3 +56,4 @@ local.properties
 target
 pom.xml.*
 *.jks
+docs

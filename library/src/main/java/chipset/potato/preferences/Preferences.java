@@ -43,8 +43,9 @@ public class Preferences {
 
     /**
      * Methods to SharedPreferences data
+     *
      * @param preferenceName Name of the preference
-     * @param val Value to be stored in the preference
+     * @param val            Value to be stored in the preference
      */
     //Boolean
     public void putSharedPreference(String preferenceName,
@@ -108,6 +109,7 @@ public class Preferences {
 
     /**
      * Method to get SharedPreferences data
+     *
      * @param preferenceName Name of the preference
      */
     // Boolean
@@ -158,5 +160,17 @@ public class Preferences {
 
         return pref.getFloat(preferenceName, 0);
 
+    }
+
+    /**
+     * Method to remove SharedPreferences data
+     *
+     * @param preferenceName Name of the preference
+     */
+    public void removeSharedPreference(String preferenceName) {
+        SharedPreferences pref = mContext
+                .getSharedPreferences(preferenceName, 0); // 0 - for private
+        // mode
+        pref.edit().remove(preferenceName).commit();
     }
 }

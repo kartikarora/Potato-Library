@@ -29,7 +29,6 @@ import android.content.Context;
 import chipset.potato.intents.Intents;
 import chipset.potato.notifications.Notifications;
 import chipset.potato.preferences.Preferences;
-import chipset.potato.sensors.Sensors;
 import chipset.potato.utils.Utils;
 
 /**
@@ -79,9 +78,5 @@ public class Potato {
 
     public Intents Intents() {
         return new Intents(mContext);
-    }
-
-    public Sensors Sensors() {
-        return new Sensors(mContext);
     }
 }

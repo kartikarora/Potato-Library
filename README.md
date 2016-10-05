@@ -23,7 +23,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'com.github.kartikarora:Potato-Library:0.1.5'
+    compile 'com.github.kartikarora:Potato-Library:0.1.6'
 }
 ```
 
@@ -40,7 +40,7 @@ dependencies {
 <dependency>
     <groupId>com.github.kartikarora</groupId>
     <artifactId>Potato-Library</artifactId>
-    <version>0.1.5</version>
+    <version>0.1.6</version>
 </dependency>
 ```
 

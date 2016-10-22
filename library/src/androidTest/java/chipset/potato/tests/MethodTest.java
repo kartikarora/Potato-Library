@@ -85,6 +85,8 @@ public class MethodTest extends AndroidTestCase {
         assertFalse(preferences.getSharedPreferenceBoolean("boolean"));
         assertEquals((long) 0, preferences.getSharedPreferenceLong("long"));
         assertEquals(0.0f, preferences.getSharedPreferenceFloat("float"));
+        assertEquals(preferences.sharedPreferenceExists("String"), true);
+        assertEquals(preferences.sharedPreferenceExists("NoString"), false);
     }
 
     public void testForIntentsMethods() {

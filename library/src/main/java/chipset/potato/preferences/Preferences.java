@@ -173,4 +173,16 @@ public class Preferences {
         // mode
         pref.edit().remove(preferenceName).commit();
     }
+
+    /**
+     * Method to check whether a preference key has been created
+     *
+     * @param preferenceName Name of the preference
+     */
+    public boolean sharedPreferenceExists(String preferenceName){
+        SharedPreferences pref = mContext
+                .getSharedPreferences(preferenceName, 0);
+
+        return pref.contains(preferenceName);
+    }
 }

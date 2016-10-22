@@ -23,7 +23,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'com.github.kartikarora:Potato-Library:0.1.6'
+    compile 'com.github.kartikarora:Potato-Library:0.1.7'
 }
 ```
 
@@ -40,7 +40,7 @@ dependencies {
 <dependency>
     <groupId>com.github.kartikarora</groupId>
     <artifactId>Potato-Library</artifactId>
-    <version>0.1.6</version>
+    <version>0.1.7</version>
 </dependency>
 ```
 
@@ -90,3 +90,4 @@ Feel free to fork the repo, add new methods, send in pull requests and add new i
 Thanks to
 - [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth tools.
 - [Anuraag Baishya](https://github.com/anuraag-baishya) for adding Mobile Data tools.
+- [Jyotman Singh](https://github.com/jyotman94) for improving `Preferences`.

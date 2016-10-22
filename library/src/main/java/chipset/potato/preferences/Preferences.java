@@ -56,7 +56,7 @@ public class Preferences {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.putBoolean(preferenceName, val);
-        editor.commit();
+        editor.apply();
     }
 
     // String
@@ -68,7 +68,7 @@ public class Preferences {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.putString(preferenceName, val);
-        editor.commit();
+        editor.apply();
     }
 
     // Integer
@@ -80,7 +80,7 @@ public class Preferences {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.putInt(preferenceName, val);
-        editor.commit();
+        editor.apply();
     }
 
     // Long
@@ -92,7 +92,7 @@ public class Preferences {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.putLong(preferenceName, val);
-        editor.commit();
+        editor.apply();
     }
 
     // Float
@@ -104,7 +104,7 @@ public class Preferences {
         SharedPreferences.Editor editor = pref.edit();
         editor.clear();
         editor.putFloat(preferenceName, val);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -117,7 +117,6 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-
         return pref.getBoolean(preferenceName, true);
 
     }
@@ -127,7 +126,6 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-
         return pref.getInt(preferenceName, 0);
 
     }
@@ -137,7 +135,6 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-
         return pref.getString(preferenceName, "null");
 
     }
@@ -147,7 +144,6 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-
         return pref.getLong(preferenceName, 0);
 
     }
@@ -157,7 +153,6 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-
         return pref.getFloat(preferenceName, 0);
 
     }
@@ -171,7 +166,9 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-        pref.edit().remove(preferenceName).commit();
+        SharedPreferences.Editor editor = pref.edit();
+        editor.remove(preferenceName);
+        editor.apply();
     }
 
     /**
@@ -179,10 +176,10 @@ public class Preferences {
      *
      * @param preferenceName Name of the preference
      */
-    public boolean sharedPreferenceExists(String preferenceName){
+    public boolean sharedPreferenceExists(String preferenceName) {
         SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0);
-
+                .getSharedPreferences(preferenceName, 0); // 0 - for private
+        // mode
         return pref.contains(preferenceName);
     }
 }

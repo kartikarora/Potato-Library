@@ -90,4 +90,4 @@ Feel free to fork the repo, add new methods, send in pull requests and add new i
 Thanks to
 - [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth tools.
 - [Anuraag Baishya](https://github.com/anuraag-baishya) for adding Mobile Data tools.
-- [Jyotman Singh](https://github.com/jyotman94) for improving `Preferences`.
+- [Jyotman Singh](https://github.com/jyotman94) for improving `Preferences` and `Bluetooth` methods.

@@ -1,0 +1,8 @@
+title: Potato Library
+description: Easy to use Utility library for Android
+google_analytics: UA-69555022-2
+show_downloads: true
+theme: jekyll-theme-tactile
+
+gems:
+  - jekyll-mentions

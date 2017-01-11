@@ -24,9 +24,11 @@
 
 package chipset.potato.intents;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.RequiresPermission;
 
 /**
  * Developer: chipset
@@ -64,7 +66,7 @@ public class Intents {
     /**
      * Method to start browser intent
      *
-     * @param url     Url of the website
+     * @param url Url of the website
      */
     public void browserIntent(String url) {
         if (!url.startsWith("https://") && !url.startsWith("http://")) {
@@ -80,6 +82,7 @@ public class Intents {
      *
      * @param phoneNumber Contact number of the phone call recipient
      */
+    @RequiresPermission(Manifest.permission.CALL_PHONE)
     public void callIntent(String phoneNumber) {
         mContext.startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel: " + phoneNumber))
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -91,6 +94,7 @@ public class Intents {
      * @param phoneNumber Contact number of the phone call recipient
      * @param message     Body of the sms to be sent
      */
+    @RequiresPermission(Manifest.permission.SEND_SMS)
     public void smsIntent(String phoneNumber, String message) {
         mContext.startActivity(new Intent(Intent.ACTION_SENDTO)
                 .setData(Uri.parse("sms:"))

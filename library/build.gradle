@@ -2,16 +2,16 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     def versionMajor = 0
     def versionMinor = 1
-    def versionPatch = 7
-    def versionBuild = 241000
+    def versionPatch = 8
+    def versionBuild = 250002
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode versionId
         versionName "${versionMajor}.${versionMinor}.${versionPatch} - ${versionId}"
@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
     testCompile 'junit:junit:4.12'
 }

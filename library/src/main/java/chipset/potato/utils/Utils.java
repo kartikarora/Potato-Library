@@ -24,6 +24,7 @@
 
 package chipset.potato.utils;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -36,6 +37,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
 import android.os.Environment;
+import android.support.annotation.RequiresPermission;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -65,6 +67,7 @@ public class Utils {
      *
      * @return true     if {@link Boolean} internet connection is established else false
      */
+    @RequiresPermission(allOf = {Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.INTERNET})
     public boolean isInternetConnected() {
         boolean isConnected;
         ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -90,6 +93,7 @@ public class Utils {
      *
      * @return {@link java.lang.Boolean} true if internet bluetooth available
      */
+    @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public boolean isBluetoothAvailable() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
@@ -103,6 +107,7 @@ public class Utils {
      *
      * @return {@link java.lang.Boolean} true if internet bluetooth is enabled else false
      */
+    @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public boolean isBluetoothOn() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter == null) {
@@ -115,6 +120,7 @@ public class Utils {
     /**
      * Method to switch on bluetooth
      */
+    @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public void setBluetoothOn() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (isBluetoothAvailable()) {
@@ -127,6 +133,7 @@ public class Utils {
     /**
      * Method to switch Off bluetooth
      */
+    @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public void setBluetoothOff() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (isBluetoothAvailable()) {
@@ -141,6 +148,7 @@ public class Utils {
      *
      * @param seconds Time in seconds for discoverable
      */
+    @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public void setBluetoothOnAndDiscoverable(int seconds) {
         if (seconds > 3600 && seconds < 1) {
             Log.i("Potato.Utils.Bluetooth", "Seconds set to 120");
@@ -180,6 +188,7 @@ public class Utils {
      * @param folderName containing directory name
      * @return {@link java.io.File} object of opened/created directory
      */
+    @RequiresPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
     public File openDirectory(String folderName) throws IOException {
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()
                 + "/" + folderName);
@@ -195,6 +204,7 @@ public class Utils {
      *
      * @return {@link java.lang.Boolean} true if GPS provider is enabled else false
      */
+    @RequiresPermission(allOf = {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION})
     public boolean isGPSEnabled(Context mContext) {
         LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -205,7 +215,7 @@ public class Utils {
      *
      * @return {@link java.lang.Boolean} true if WiFi is enabled else false
      */
-
+    @RequiresPermission(allOf = {Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.CHANGE_WIFI_STATE})
     public boolean isWiFiEnabled() {
         WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         return wifiManager.isWifiEnabled();
@@ -216,6 +226,7 @@ public class Utils {
      *
      * @param mContext Context of the current activity
      */
+    @RequiresPermission(allOf = {Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.CHANGE_WIFI_STATE})
     public void setWiFiOn(Context mContext) {
         WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(true);
@@ -224,6 +235,7 @@ public class Utils {
     /**
      * Method to switch off WiFi
      */
+    @RequiresPermission(allOf = {Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.CHANGE_WIFI_STATE})
     public void setWifiOff() {
         WifiManager wifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         wifiManager.setWifiEnabled(false);
@@ -244,6 +256,7 @@ public class Utils {
      *
      * @return 0 for not connected, 1 for WiFi, 2 for Mobile Data
      */
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     public int connectionType() {
         ConnectivityManager cm = (ConnectivityManager) mContext
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -264,6 +277,7 @@ public class Utils {
      *
      * @return {@link java.lang.Boolean} true if Mobile Data is enabled
      */
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     public boolean isMobileDataEnabled() {
         boolean mobileDataEnabled = false; // Assume disabled
         ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -282,6 +296,7 @@ public class Utils {
     /**
      * Method to enable Mobile Data
      */
+    @RequiresPermission(Manifest.permission.CHANGE_NETWORK_STATE)
     public void enableMobileData() {
         try {
             ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -300,6 +315,7 @@ public class Utils {
     /**
      * Method to disable Mobile Data
      */
+    @RequiresPermission(Manifest.permission.CHANGE_NETWORK_STATE)
     public void disableMobileData() {
         try {
             ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);

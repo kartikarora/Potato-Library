@@ -63,6 +63,16 @@ The following permissions need to be added to AndroidManifest.xml file of your p
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
+#### For placing a call
+```xml
+<uses-permission android:name="android.permission.CALL_PHONE" />
+```
+
+#### For sending SMS
+```xml
+<uses-permission android:name="android.permission.SEND_SMS" />
+```
+
 #### For bluetooth tools
 
 ```xml
@@ -77,6 +87,24 @@ The following permissions need to be added to AndroidManifest.xml file of your p
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 ```
 
+#### For Mobile network tools
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+```
+
+#### For GPS tool
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+
+#### For reading external storage
+```xml
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+```
 Please make sure to request appropriate [runtime permisions](http://developer.android.com/training/permissions/requesting.html) on Android Marshmallow (SDK 23) and above
 
 ## Further Development

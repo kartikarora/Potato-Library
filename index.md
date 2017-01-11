@@ -9,30 +9,17 @@ allprojects {
             maven { url "https://jitpack.io" }
         }
     }
+```
 
+To the module's `build.gradle` file, add
+
+```groovy
 dependencies {
-    compile 'com.github.kartikarora:Potato-Library:0.1.4'
+    compile 'com.github.kartikarora:Potato-Library:0.1.8'
 }
 ```
 
-### Maven
-
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-
-<dependency>
-    <groupId>com.github.kartikarora</groupId>
-    <artifactId>Potato-Library</artifactId>
-    <version>0.1.4</version>
-</dependency>
-```
-
-Call the library using `Potato.potate()` and you will get following methods to use:
+Call the library using `Potato.potate(context)` and you will get following methods to use:
 
 * Utils() - Utility methods to check Internet connection, methods on Bluetooth connection, methods for WiFi, get Battery level etc.
 * Notifications() - Create a notification with or without sound
@@ -51,26 +38,62 @@ The following permissions need to be added to AndroidManifest.xml file of your p
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
+#### For placing a call
+```xml
+<uses-permission android:name="android.permission.CALL_PHONE" />
+```
+
+#### For sending SMS
+```xml
+<uses-permission android:name="android.permission.SEND_SMS" />
+```
+
 #### For bluetooth tools
 
 ```xml
 <uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 ```
 
 #### For WiFi tools
+
 ```xml
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 ```
+
+#### For Mobile network tools
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+```
+
+#### For GPS tool
+```xml
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```
+
+
+#### For reading external storage
+```xml
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+```
+Please make sure to request appropriate [runtime permisions](http://developer.android.com/training/permissions/requesting.html) on Android Marshmallow (SDK 23) and above
+
+## Further Development
+
+Plan to add Android Wear support.
 
 ## Contribution
 
 Feel free to fork the repo, add new methods, send in pull requests and add new issues. There's no license right now.
 
 Thanks to
-- [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth disable method.
+- [Saketh Kaparthi](https://github.com/sakethkaparthi) for adding Wifi tools, GPS tool and Bluetooth tools.
 - [Anuraag Baishya](https://github.com/anuraag-baishya) for adding Mobile Data tools.
-
+- [Jyotman Singh](https://github.com/jyotman94) for improving `Preferences` and `Bluetooth` methods.
 
 [![JitPack Status](https://jitpack.io/v/kartikarora/Potato-Library.svg)](https://jitpack.io/#kartikarora/Potato-Library)
 [![Travis-CI Build Status](https://travis-ci.org/kartikarora/Potato-Library.svg?branch=master)](https://travis-ci.org/kartikarora/Potato-Library)

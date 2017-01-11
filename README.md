@@ -23,7 +23,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'com.github.kartikarora:Potato-Library:0.1.7'
+    compile 'com.github.kartikarora:Potato-Library:0.1.8'
 }
 ```
 

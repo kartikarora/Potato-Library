@@ -58,6 +58,7 @@ public class MethodTest extends AndroidTestCase {
         intents = potato.Intents();
     }
 
+    @SuppressWarnings("MissingPermission")
     public void testForUtilMethods() throws IOException {
         assertNotNull(utils);
         assertTrue(utils.isInternetConnected());

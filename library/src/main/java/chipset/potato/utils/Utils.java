@@ -41,7 +41,6 @@ import android.support.annotation.RequiresPermission;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -96,10 +95,7 @@ public class Utils {
     @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public boolean isBluetoothAvailable() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter == null) {
-            Toast.makeText(mContext, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
-            return false;
-        } else return true;
+        return mBluetoothAdapter != null;
     }
 
     /**
@@ -110,11 +106,7 @@ public class Utils {
     @RequiresPermission(allOf = {Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN})
     public boolean isBluetoothOn() {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter == null) {
-            Toast.makeText(mContext, "Bluetooth not supported", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return mBluetoothAdapter.isEnabled();
+        return mBluetoothAdapter != null && mBluetoothAdapter.isEnabled();
     }
 
     /**

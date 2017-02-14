@@ -1,7 +1,7 @@
 /*
  MIT License
 
- Copyright (c) 2016 Kartik Arora
+ Copyright (c) 2017 Kartik Arora
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,15 @@
  SOFTWARE.
  */
 
-package chipset.potato;
+package me.kartikarora.potato;
 
 import android.content.Context;
 
-import chipset.potato.intents.Intents;
-import chipset.potato.notifications.Notifications;
-import chipset.potato.preferences.Preferences;
-import chipset.potato.utils.Utils;
+import me.kartikarora.potato.intents.Intents;
+import me.kartikarora.potato.notifications.Notifications;
+import me.kartikarora.potato.preferences.Preferences;
+import me.kartikarora.potato.utils.Utils;
+
 
 /**
  * Developer: chipset

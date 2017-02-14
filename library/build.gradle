@@ -1,12 +1,36 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'Potato-Library'
+
+    publishedGroupId = 'me.kartikarora.potato'
+    libraryName = 'Potato-Library'
+    artifact = 'potato'
+
+    libraryDescription = 'Easy to use Utility library for Android'
+
+    siteUrl = 'https://kartikarora.me/Potato-Library'
+    gitUrl = 'https://github.com/kartikarora/Potato-Library.git'
+
+    libraryVersion = '0.2.0'
+
+    developerId = 'kartikarora'
+    developerName = 'Kartik Arora'
+    developerEmail = 'aawaazdo@kartikarora.me'
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     def versionMajor = 0
-    def versionMinor = 1
-    def versionPatch = 9
+    def versionMinor = 2
+    def versionPatch = 0
     def versionBuild = 250002
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
@@ -29,3 +53,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.1'
     testCompile 'junit:junit:4.12'
 }
+
+
+apply from: 'https://raw.githubusercontent.com/kartikarora/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/kartikarora/JCenter/master/bintrayv1.gradle'

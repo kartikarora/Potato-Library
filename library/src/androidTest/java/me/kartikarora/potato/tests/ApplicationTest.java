@@ -1,7 +1,7 @@
 /*
  MIT License
 
- Copyright (c) 2016 Kartik Arora
+ Copyright (c) 2017 Kartik Arora
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,14 @@
  SOFTWARE.
  */
 
-package chipset.potato.tests;
+package me.kartikarora.potato.tests;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
 /**
  * Developer: chipset
- * Package : chipset.potato
+ * Package : chipset.potato.tests
  * Project : Potato-Library
  * Date : 20/6/15
  */

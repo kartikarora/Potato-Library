@@ -1,7 +1,7 @@
 /*
  MIT License
 
- Copyright (c) 2016 Kartik Arora
+ Copyright (c) 2017 Kartik Arora
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
  SOFTWARE.
  */
 
-package chipset.potato.utils;
+package me.kartikarora.potato.utils;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;

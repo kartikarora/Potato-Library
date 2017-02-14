@@ -2,8 +2,5 @@
 <resources>
 
     <string name="app_name">Potato-Library</string>
-    <string name="title_activity_my">MyActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
 </resources>

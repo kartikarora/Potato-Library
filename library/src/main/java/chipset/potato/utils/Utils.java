@@ -27,6 +27,8 @@ package chipset.potato.utils;
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -41,11 +43,14 @@ import android.support.annotation.RequiresPermission;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
+import static android.content.Context.CLIPBOARD_SERVICE;
 
 /**
  * Developer: chipset
@@ -321,5 +326,18 @@ public class Utils {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Method to copy data to clipboard
+     *
+     * @param message Data to be copied
+     * @param what    Explanation string of what is copied
+     */
+    public void copyToClipboard(String message, String what) {
+        ClipboardManager clipboard = (ClipboardManager) mContext.getSystemService(CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(message, message);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(mContext, what + " copied to clipboard", Toast.LENGTH_SHORT).show();
     }
 }

@@ -6,7 +6,7 @@ android {
 
     def versionMajor = 0
     def versionMinor = 1
-    def versionPatch = 8
+    def versionPatch = 9
     def versionBuild = 250002
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
     testCompile 'junit:junit:4.12'
 }

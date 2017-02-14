@@ -3,7 +3,7 @@
 Easy to use Utility library for Android.
 
 [ ![Download](https://api.bintray.com/packages/chipset95/maven/Potato-Library/images/download.svg?version=0.2.0) ](https://bintray.com/chipset95/maven/Potato-Library/0.2.0/link)
-[![Travis-CI Build Status](https://travis-ci.org/kartikarora/Potato-Library.svg?branch=master)](https://travis-ci.org/kartikarora/Potato-Library)
+[![Travis-CI Build Status](https://travis-ci.org/kartikarora/Potato-Library.svg)](https://travis-ci.org/kartikarora/Potato-Library)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat)](http://android-arsenal.com/details/1/2205)
 
 ## Usage

@@ -340,4 +340,15 @@ public class Utils {
         clipboard.setPrimaryClip(clip);
         Toast.makeText(mContext, what + " copied to clipboard", Toast.LENGTH_SHORT).show();
     }
+
+    /**
+     * Method to capitalize a given {@link java.lang.String}
+     *
+     * @param original String to be capitalized
+     * @return Capitalized string
+     */
+    public String capitalizeString(String original) {
+        return (original == null || original.length() == 0 || original.isEmpty()) ? original :
+                original.substring(0, 1).toUpperCase() + original.substring(1);
+    }
 }

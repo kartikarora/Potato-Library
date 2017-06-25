@@ -6,7 +6,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'me.kartikarora.potato:potato:0.2.0'
+    compile 'me.kartikarora.potato:library:0.2.0'
 }
 ```
 

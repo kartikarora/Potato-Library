@@ -1,18 +1,18 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
 
     def versionMajor = 0
     def versionMinor = 2
-    def versionPatch = 0
-    def versionBuild = 250002
+    def versionPatch = 1
+    def versionBuild = 260001
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode versionId
         versionName "${versionMajor}.${versionMinor}.${versionPatch} - ${versionId}"
     }
@@ -25,13 +25,13 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support:appcompat-v7:26.0.0-beta2'
     testCompile 'junit:junit:4.12'
 }
 
 publishGlobalConfigurations {
     groupId = 'me.kartikarora.potato'
-    versionName = '0.2.0'
+    versionName = '0.2.1-SNAPSHOT'
     url = "https://github.com/kartikarora/Potato-Library.git"
 
     bintrayApiKey = System.getenv('BINTRAY_API_KEY')

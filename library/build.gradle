@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
 
     def versionMajor = 0
     def versionMinor = 2
     def versionPatch = 1
-    def versionBuild = 260001
+    def versionBuild = 260002
     def versionId = 42 * (versionMajor * 40 + versionMinor * 20 + versionPatch * 10 + versionBuild * 5)
 
     defaultConfig {
@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:26.0.0-beta2'
+    compile 'com.android.support:appcompat-v7:26.0.1'
     testCompile 'junit:junit:4.12'
 }
 

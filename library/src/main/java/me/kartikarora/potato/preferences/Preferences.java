@@ -135,7 +135,7 @@ public class Preferences {
         SharedPreferences pref = mContext
                 .getSharedPreferences(preferenceName, 0); // 0 - for private
         // mode
-        return pref.getString(preferenceName, "null");
+        return pref.getString(preferenceName, null);
 
     }
 

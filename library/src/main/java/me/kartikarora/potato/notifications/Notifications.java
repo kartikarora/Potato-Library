@@ -37,7 +37,7 @@ import java.io.File;
 
 /**
  * Developer: chipset
- * Package : chipset.potato.notifications
+ * Package : me.kartikarora.potato.notifications
  * Project : Potato-Library
  * Date : 14/1/15
  */

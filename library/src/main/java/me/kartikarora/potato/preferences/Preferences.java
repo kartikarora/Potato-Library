@@ -29,16 +29,18 @@ import android.content.SharedPreferences;
 
 /**
  * Developer: chipset
- * Package : chipset.potato.preferences
+ * Package : me.kartikarora.potato.preferences
  * Project : Potato-Library
  * Date : 14/1/15
  */
 public class Preferences {
 
     private Context mContext;
+    private SharedPreferences mPreference;
 
-    public Preferences(Context mContext) {
-        this.mContext = mContext;
+    public Preferences(Context context) {
+        this.mContext = context;
+        this.mPreference = context.getSharedPreferences(context.getPackageName(),0);
     }
 
     /**
@@ -50,10 +52,7 @@ public class Preferences {
     //Boolean
     public void putSharedPreference(String preferenceName,
                                     boolean val) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putBoolean(preferenceName, val);
         editor.apply();
@@ -62,10 +61,7 @@ public class Preferences {
     // String
     public void putSharedPreference(String preferenceName,
                                     String val) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putString(preferenceName, val);
         editor.apply();
@@ -74,10 +70,7 @@ public class Preferences {
     // Integer
     public void putSharedPreference(String preferenceName,
                                     int val) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putInt(preferenceName, val);
         editor.apply();
@@ -86,10 +79,7 @@ public class Preferences {
     // Long
     public void putSharedPreference(String preferenceName,
                                     long val) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putLong(preferenceName, val);
         editor.apply();
@@ -98,10 +88,7 @@ public class Preferences {
     // Float
     public void putSharedPreference(String preferenceName,
                                     float val) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putFloat(preferenceName, val);
         editor.apply();
@@ -114,46 +101,31 @@ public class Preferences {
      */
     // Boolean
     public boolean getSharedPreferenceBoolean(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.getBoolean(preferenceName, true);
+        return mPreference.getBoolean(preferenceName, true);
 
     }
 
     // Integer
     public int getSharedPreferenceInteger(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.getInt(preferenceName, 0);
+        return mPreference.getInt(preferenceName, 0);
 
     }
 
     // String
     public String getSharedPreferenceString(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.getString(preferenceName, null);
+        return mPreference.getString(preferenceName, null);
 
     }
 
     // Long
     public long getSharedPreferenceLong(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.getLong(preferenceName, 0);
+        return mPreference.getLong(preferenceName, 0);
 
     }
 
     // Float
     public float getSharedPreferenceFloat(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.getFloat(preferenceName, 0);
+        return mPreference.getFloat(preferenceName, 0);
 
     }
 
@@ -163,10 +135,7 @@ public class Preferences {
      * @param preferenceName Name of the preference
      */
     public void removeSharedPreference(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        SharedPreferences.Editor editor = pref.edit();
+        SharedPreferences.Editor editor = mPreference.edit();
         editor.remove(preferenceName);
         editor.apply();
     }
@@ -177,9 +146,6 @@ public class Preferences {
      * @param preferenceName Name of the preference
      */
     public boolean sharedPreferenceExists(String preferenceName) {
-        SharedPreferences pref = mContext
-                .getSharedPreferences(preferenceName, 0); // 0 - for private
-        // mode
-        return pref.contains(preferenceName);
+        return mPreference.contains(preferenceName);
     }
 }

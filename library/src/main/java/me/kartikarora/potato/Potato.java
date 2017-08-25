@@ -34,7 +34,7 @@ import me.kartikarora.potato.utils.Utils;
 
 /**
  * Developer: chipset
- * Package : chipset.potato
+ * Package : me.kartikarora.potato
  * Project : PotatoLibrary
  * Date : 22/10/14
  */

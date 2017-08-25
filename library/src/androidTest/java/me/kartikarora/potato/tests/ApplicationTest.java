@@ -29,7 +29,7 @@ import android.test.ApplicationTestCase;
 
 /**
  * Developer: chipset
- * Package : chipset.potato.tests
+ * Package : me.kartikarora.potato.tests
  * Project : Potato-Library
  * Date : 20/6/15
  */

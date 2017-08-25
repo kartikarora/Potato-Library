@@ -32,7 +32,7 @@ import android.support.annotation.RequiresPermission;
 
 /**
  * Developer: chipset
- * Package : chipset.potato.intents
+ * Package : me.kartikarora.potato.intents
  * Project : Potato-Library
  * Date : 14/1/15
  */

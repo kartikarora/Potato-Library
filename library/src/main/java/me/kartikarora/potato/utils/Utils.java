@@ -54,7 +54,7 @@ import static android.content.Context.CLIPBOARD_SERVICE;
 
 /**
  * Developer: chipset
- * Package : chipset.potato
+ * Package : me.kartikarora.potato.utils
  * Project : Potato-Library
  * Date : 14/1/15
  */

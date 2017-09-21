@@ -55,7 +55,7 @@ public class Preferences {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putBoolean(preferenceName, val);
-        editor.apply();
+        editor.commit();
     }
 
     // String
@@ -64,7 +64,7 @@ public class Preferences {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putString(preferenceName, val);
-        editor.apply();
+        editor.commit();
     }
 
     // Integer
@@ -73,7 +73,7 @@ public class Preferences {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putInt(preferenceName, val);
-        editor.apply();
+        editor.commit();
     }
 
     // Long
@@ -82,7 +82,7 @@ public class Preferences {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putLong(preferenceName, val);
-        editor.apply();
+        editor.commit();
     }
 
     // Float
@@ -91,7 +91,7 @@ public class Preferences {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.clear();
         editor.putFloat(preferenceName, val);
-        editor.apply();
+        editor.commit();
     }
 
     /**
@@ -137,7 +137,7 @@ public class Preferences {
     public void removeSharedPreference(String preferenceName) {
         SharedPreferences.Editor editor = mPreference.edit();
         editor.remove(preferenceName);
-        editor.apply();
+        editor.commit();
     }
 
     /**

@@ -14,7 +14,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 26
         versionCode versionId
-        versionName "${versionMajor}.${versionMinor}.${versionPatch} - ${versionId} - SNAPSHOT"
+        versionName "${versionMajor}.${versionMinor}.${versionPatch} - ${versionId}"
     }
     buildTypes {
         release {
@@ -29,13 +29,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-publishGlobalConfigurations {
+publishConfigurations {
     groupId = 'me.kartikarora.potato'
-    versionName = '0.2.1-SNAPSHOT'
-    url = "https://github.com/kartikarora/Potato-Library.git"
+    versionName = '0.2.1'
+    githubUrl = "https://github.com/kartikarora/Potato-Library.git"
 
-    bintrayApiKey = System.getenv('BINTRAY_API_KEY')
-    bintrayUser = System.getenv('BINTRAY_USER')
+    bintrayUser = System.getenv("BINTRAY_USER")
+    bintrayApiKey = System.getenv("BINTRAY_API_KEY")
 
     licenseName = 'MIT'
     licenseUrl = 'https://opensource.org/licenses/MIT'

@@ -25,6 +25,7 @@
 package me.kartikarora.potato.utils;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
@@ -185,6 +186,7 @@ public class Utils {
      * @param folderName containing directory name
      * @return {@link java.io.File} object of opened/created directory
      */
+    @SuppressLint("MissingPermission")
     @RequiresPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
     public File openDirectory(String folderName) throws IOException {
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()

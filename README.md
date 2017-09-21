@@ -2,7 +2,7 @@
 
 Easy to use Utility library for Android.
 
-[ ![Download](https://api.bintray.com/packages/chipset95/maven/Potato-Library/images/download.svg?version=0.2.0-SNAPSHOT) ](https://bintray.com/chipset95/maven/Potato-Library/0.2.0/link)
+[ ![Download](https://api.bintray.com/packages/chipset95/maven/Potato-Library/images/download.svg?version=0.2.1) ](https://bintray.com/chipset95/maven/Potato-Library/0.2.1/link)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat)](http://android-arsenal.com/details/1/2205)
 
 ## Usage
@@ -13,7 +13,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'me.kartikarora.potato:potato:0.2.1-SNAPSHOT'
+    compile 'me.kartikarora.potato:potato:0.2.1'
 }
 ```
 

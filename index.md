@@ -1,4 +1,4 @@
-## Usage
+## Potato Library
 
 ### Gradle
 

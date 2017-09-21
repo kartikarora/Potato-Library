@@ -6,7 +6,7 @@ To the module's `build.gradle` file, add
 
 ```groovy
 dependencies {
-    compile 'me.kartikarora.potato:library:0.2.0'
+    compile 'me.kartikarora.potato:library:0.2.1'
 }
 ```
 
@@ -87,6 +87,5 @@ Thanks to
 - [Anuraag Baishya](https://github.com/anuraag-baishya) for adding Mobile Data tools.
 - [Jyotman Singh](https://github.com/jyotman94) for improving `Preferences` and `Bluetooth` methods.
 
-[![Download](https://api.bintray.com/packages/chipset95/maven/Potato-Library/images/download.svg?version=0.2.0) ](https://bintray.com/chipset95/maven/Potato-Library/0.2.0/link)
-[![Travis-CI Build Status](https://travis-ci.org/kartikarora/Potato-Library.svg)](https://travis-ci.org/kartikarora/Potato-Library)
+[![Download](https://api.bintray.com/packages/chipset95/maven/Potato-Library/images/download.svg?version=0.2.0) ](https://bintray.com/chipset95/maven/Potato-Library/0.2.1/link)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Potato%20Library-blue.svg?style=flat)](http://android-arsenal.com/details/1/2205)
